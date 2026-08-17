@@ -1,41 +1,55 @@
-# 把你的 wallpaper 壁纸用到 DeepSeek Harness 上
+<div align="center">
 
-`dsh-wallpaper` 是 [DeepSeek Harness](https://deepseek.com/harness/)（dsh）的动态壁纸插件：把本地视频 / 图片变成全屏动态壁纸，并且支持效果调节、壁纸一键切换、Wallpaper Engine 工坊导入。所有设置自动保存，**重启 dsh、换浏览器也永久生效**。
+# 🎨 dsh-wallpaper
 
-![demo](docs/demo.png)
+## 把你的 wallpaper 动态壁纸用到 DeepSeek Harness 上
 
-## 功能
+把本地视频 / 图片变成 **DeepSeek Harness** 的全屏动态壁纸——效果随时可调、壁纸一键切换、支持 Wallpaper Engine 工坊导入，设置自动保存，**重启不丢**。
 
-- **全屏动态壁纸**：视频静音循环播放、图片平铺全屏，位于界面最底层，不挡任何操作
-- **效果调节**：遮罩暗度（0–75%）、面板透明度（0–100，半透明透出壁纸）、缩放模式（填充 / 适应 / 拉伸）
-- **壁纸切换**：壁纸库列表一键切换、删除；开关总控，关闭后界面完全还原
-- **上传与导入**：本地上传（mp4 / webm / gif / jpg / png / webp，上限 1GB）；扫描并导入 Wallpaper Engine 工坊媒体
-- **永久保存**：当前壁纸与效果参数写入 `~/.dsh/wallpaper-config.json`，重启不丢
+<img src="docs/demo.gif" alt="dsh-wallpaper 动态演示" width="820">
 
-## 环境要求
+![DSH](https://img.shields.io/badge/DeepSeek%20Harness-0.1.0--rc.6%2B-4B8BBE?style=flat-square)
+![Node](https://img.shields.io/badge/Node.js-%3E%3D22.19-339933?style=flat-square)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-orange?style=flat-square)
 
-- DeepSeek Harness `0.1.0-rc.6` 及以上（Windows / macOS / Linux）
-- Node.js ≥ 22.19（dsh 的要求）
+</div>
 
-## 安装
+---
 
-### 方式一：通过 dsh 插件命令（推荐，仓库发布后可用）
+## ✨ 功能特性
+
+| | |
+|:---|:---|
+| 🖼️ **全屏动态壁纸** | 视频静音循环播放、图片平铺全屏，位于界面最底层，不挡任何操作 |
+| 🎚️ **效果调节** | 遮罩暗度、面板透明度、缩放模式（填充 / 适应 / 拉伸），所见即所得 |
+| 🔄 **一键切换** | 壁纸库列表点选即用、随时删除，总开关一键还原界面 |
+| 📤 **上传导入** | 本地上传（mp4 / webm / gif / jpg / png / webp，上限 1GB）+ Wallpaper Engine 工坊扫描导入 |
+| 💾 **永久保存** | 当前壁纸与效果写入 `~/.dsh/wallpaper-config.json`，重启 dsh、换浏览器都不丢 |
+| 🪶 **轻量无依赖** | 不依赖任何仅限 macOS / Linux 的包，Windows 原生可跑 |
+
+## 🚀 安装
+
+**前置**：已装好 DeepSeek Harness（`dsh web` 能正常打开），Node.js ≥ 22.19。
+
+### 一键安装
 
 ```bash
 dsh plugin --profile web add "github:<你的用户名>/dsh-wallpaper"
 ```
 
-### 方式二：手动安装
+安装完成后 **强制刷新浏览器**（`Ctrl + Shift + R`）即可在 设置 → 动态壁纸 中看到插件。
+
+### 手动安装（备选）
 
 1. 把插件源码放到 `~/.dsh/plugins/dsh-wallpaper`
-2. 建立软链接（Windows 用 junction）：
+2. 建立链接（Windows 用 junction）：
 
    ```bash
-   # Windows（管理员或开发者模式）
    mklink /J "%USERPROFILE%\.dsh\profiles\web\node_modules\dsh-wallpaper" "%USERPROFILE%\.dsh\plugins\dsh-wallpaper"
    ```
 
-3. 在 `~/.dsh/profiles/web/package.json` 的 `dependencies` 里加一行：
+3. 在 `~/.dsh/profiles/web/package.json` 的 `dependencies` 添加：
 
    ```json
    "dsh-wallpaper": "link:C:/Users/<你的用户名>/.dsh/plugins/dsh-wallpaper"
@@ -51,21 +65,21 @@ dsh plugin --profile web add "github:<你的用户名>/dsh-wallpaper"
 
 5. 重启 dsh，浏览器打开 http://127.0.0.1:3080
 
-## 使用
+## 🎮 使用
 
 进入 **设置 → 动态壁纸**：
 
-- **开关**：一键开启 / 关闭壁纸
-- **壁纸库**：列出 `~/.dsh/wallpapers` 下的所有媒体，点击「使用」立即切换，「删除」移除文件
+- **开关**：一键开启 / 关闭壁纸，关闭后界面完全还原
+- **壁纸库**：列出 `~/.dsh/wallpapers` 下所有媒体，「使用」立即切换，「删除」移除文件
 - **上传本地文件…**：选择本地视频 / 图片，自动入库并设为当前壁纸
-- **扫描工坊…**：扫描 Wallpaper Engine 工坊目录，列出可导入的媒体，点击「导入」复制入库
-- **效果调节**：遮罩暗度、面板透明度、缩放模式（填充 / 适应 / 拉伸）
+- **扫描工坊…**：扫描 Wallpaper Engine 工坊，点击「导入」复制入库
+- **效果调节**：遮罩暗度、面板透明度、缩放模式，改动实时生效
 
-所有改动实时生效并自动保存。
+所有改动自动保存，永久生效。
 
-## 配置 Wallpaper Engine 工坊目录
+## 🛠️ 配置工坊目录
 
-扫描工坊默认读取 `D:\steam\steamapps\workshop\content\431960`（Steam 默认安装位置）。如果你的 Steam 库在别处，启动 dsh 前设置环境变量即可：
+默认扫描 `D:\steam\steamapps\workshop\content\431960`（Steam 默认位置）。Steam 库在别处时，启动 dsh 前设置环境变量：
 
 ```powershell
 # PowerShell
@@ -77,35 +91,28 @@ $env:DSH_WALLPAPER_WORKSHOP_ROOT = "D:\SteamLibrary\steamapps\workshop\content\4
 export DSH_WALLPAPER_WORKSHOP_ROOT="$HOME/.steam/steam/steamapps/workshop/content/431960"
 ```
 
-## 卸载
+## 🗑️ 卸载
 
 1. 删除 `~/.dsh/profiles/web/cordis.patch.yml` 中的 `wallpaper` insert 条目
 2. 删除 `~/.dsh/profiles/web/package.json` 中的 `dsh-wallpaper` 依赖行
-3. 删除软链接与 `~/.dsh/plugins/dsh-wallpaper` 源码目录
-4. （可选）删除 `~/.dsh/wallpapers` 与 `~/.dsh/wallpaper-config.json`
+3. 删除链接与 `~/.dsh/plugins/dsh-wallpaper` 源码目录
+4. （可选）删除 `~/.dsh/wallpapers` 与 `~/.dsh/wallpaper-config.json`（如需保留壁纸文件请先移走）
 
-壁纸文件如需保留，请先移走 `~/.dsh/wallpapers` 中的文件。
+## ❓ 常见问题
 
-## 常见问题
+| 现象 | 原因与解决 |
+|:---|:---|
+| 设置页「动态壁纸」空白 | 浏览器缓存了旧插件包：**强制刷新**（`Ctrl + F5`）或清站点缓存 |
+| 改了代码不生效 | 保持 `lib/client.js` 的 `__ModuleLoader__.load` 注册格式，重启 dsh 后强刷浏览器 |
+| Windows 报 EBADPLATFORM | 本插件不依赖仅支持 macOS / Linux 的包，可放心使用 |
+| 扫描工坊提示目录不可读 | 未设置 `DSH_WALLPAPER_WORKSHOP_ROOT`，或该路径下没有 `431960` 目录 |
 
-### 设置页「动态壁纸」内容空白？
-
-这是浏览器缓存了旧的插件包。请强制刷新：`Ctrl + F5`（或清一下该站点的缓存），再重新打开设置页。
-
-### Windows 上会不会报 EBADPLATFORM？
-
-不会。本插件不依赖仅支持 macOS / Linux 的包，Windows 可直接运行。
-
-### 插件加载失败 / 改了代码不生效？
-
-修改 `lib/client.js` 后请保持 `window.__ModuleLoader__.load({ id: "dsh-wallpaper", factory })` 的注册格式，并重启 dsh 后再强制刷新浏览器。
-
-## 开发
+## 🛠️ 开发
 
 ```bash
 npm run check   # 校验三个入口文件的语法
 ```
 
-## 许可
+## 📄 许可
 
-[MIT](LICENSE)
+[MIT](LICENSE) © dsh-wallpaper contributors
