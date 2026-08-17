@@ -52,7 +52,7 @@
 ### 一键安装
 
 ```bash
-dsh plugin --profile web add "github:<你的用户名>/dsh-wallpaper"
+dsh plugin --profile web add "github:B-TQ/dsh-wallpaper"
 ```
 
 安装完成后 **强制刷新浏览器**（`Ctrl + Shift + R`）即可在 设置 → 动态壁纸 中看到插件。
