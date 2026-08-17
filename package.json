@@ -1,0 +1,56 @@
+{
+  "name": "dsh-wallpaper",
+  "version": "0.1.0",
+  "description": "DSH (DeepSeek Harness) 动态壁纸插件：把本地视频/图片变成全屏动态壁纸，支持效果调节、壁纸切换与 Wallpaper Engine 工坊导入，设置自动保存永久生效。",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "wallpaper",
+    "动态壁纸",
+    "wallpaper-engine"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js && node --check lib/invariant.js"
+  },
+  "engines": {
+    "node": ">=22.19"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./invariant": "./lib/invariant.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-ui-theme": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-host-webserver": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-invariants": "^0.1.0-rc.6",
+    "react": "^18.2.0"
+  },
+  "license": "MIT"
+}
