@@ -6,7 +6,9 @@
 
 把本地视频 / 图片变成 **DeepSeek Harness** 的全屏动态壁纸——效果随时可调、壁纸一键切换、支持 Wallpaper Engine 工坊导入，设置自动保存，**重启不丢**。
 
-<img src="docs/demo.gif" alt="dsh-wallpaper 动态演示" width="820">
+<img src="docs/demo.gif" alt="dsh-wallpaper 动态演示" width="860">
+
+[▶️ 查看 30fps 高清演示（MP4）](docs/demo.mp4)
 
 ![DSH](https://img.shields.io/badge/DeepSeek%20Harness-0.1.0--rc.6%2B-4B8BBE?style=flat-square)
 ![Node](https://img.shields.io/badge/Node.js-%3E%3D22.19-339933?style=flat-square)
@@ -16,6 +18,21 @@
 </div>
 
 ---
+
+## 🎛️ 设置界面
+
+插件安装后，进入 **设置 → 动态壁纸**，即可完整控制壁纸的展示与效果：
+
+<img src="docs/settings.png" alt="dsh-wallpaper 设置界面" width="860">
+
+| 区域 | 说明 |
+|:---|:---|
+| 总开关 | 一键开启 / 关闭壁纸，关闭后界面完全还原 |
+| 壁纸库 | 列出 `~/.dsh/wallpapers` 下所有媒体，点选即用、随时删除 |
+| 上传 / 导入 | 本地上传视频 / 图片，或扫描 Wallpaper Engine 工坊一键导入 |
+| 效果调节 | 遮罩暗度、面板透明度、缩放模式（填充 / 适应 / 拉伸），实时生效 |
+
+所有改动自动保存，**永久生效**。
 
 ## ✨ 功能特性
 
