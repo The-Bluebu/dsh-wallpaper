@@ -29,6 +29,10 @@
     "./invariant": "./lib/invariant.js",
     "./package.json": "./package.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-TQ/dsh-wallpaper.git"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
