@@ -14,6 +14,7 @@
   "main": "lib/index.js",
   "files": [
     "lib",
+    "cordis.patch.yml",
     "README.md",
     "LICENSE"
   ],
@@ -27,6 +28,7 @@
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
     "./invariant": "./lib/invariant.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
   "repository": {
