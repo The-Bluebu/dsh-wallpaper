@@ -19,7 +19,8 @@
     "LICENSE"
   ],
   "scripts": {
-    "check": "node --check lib/index.js && node --check lib/client.js && node --check lib/invariant.js"
+    "check": "node --check lib/index.js && node --check lib/client.js && node --check lib/invariant.js",
+    "prepublishOnly": "npm run check"
   },
   "engines": {
     "node": ">=22.19"
