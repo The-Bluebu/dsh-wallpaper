@@ -51,8 +51,16 @@
 
 ### 一键安装
 
+插件自带 `dsh.bundle` manifest，一条命令即可自动注册，无需再改任何配置：
+
 ```bash
 dsh plugin --profile web add "github:B-TQ/dsh-wallpaper"
+```
+
+未安装 git 时，可直接用 GitHub 打包的源码 tarball：
+
+```bash
+dsh plugin --profile web add "https://codeload.github.com/B-TQ/dsh-wallpaper/tar.gz/refs/heads/main"
 ```
 
 安装完成后 **强制刷新浏览器**（`Ctrl + Shift + R`）即可在 设置 → 动态壁纸 中看到插件。
