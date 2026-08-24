@@ -1,5 +1,5 @@
 {
-  "name": "dsh-wallpaper",
+  "name": "@b-tq/dsh-wallpaper",
   "version": "0.1.0",
   "description": "DSH (DeepSeek Harness) 动态壁纸插件：把本地视频/图片变成全屏动态壁纸，支持效果调节、壁纸切换与 Wallpaper Engine 工坊导入，设置自动保存永久生效。",
   "keywords": [

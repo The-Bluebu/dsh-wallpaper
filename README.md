@@ -63,6 +63,12 @@ dsh plugin --profile web add "github:B-TQ/dsh-wallpaper"
 dsh plugin --profile web add "https://codeload.github.com/B-TQ/dsh-wallpaper/tar.gz/refs/heads/main"
 ```
 
+发布到 npm 后，也可直接按包名安装（scoped 名归作者账号所有，不会与其他同名插件冲突）：
+
+```bash
+dsh plugin --profile web add @b-tq/dsh-wallpaper
+```
+
 安装完成后 **强制刷新浏览器**（`Ctrl + Shift + R`）即可在 设置 → 动态壁纸 中看到插件。
 
 ### 手动安装（备选）

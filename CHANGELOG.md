@@ -3,9 +3,10 @@
 ## Unreleased
 
 - 声明 `dsh.bundle` manifest 与 `cordis.patch.yml`，支持 `dsh plugin add` 一条命令自注册安装
+- 包名改为 scoped `@b-tq/dsh-wallpaper`，避免与 npm 上已被占用的裸名 `dsh-wallpaper` 冲突
 - 补充 `repository` 字段，npm 发布产物包含 `cordis.patch.yml`
 - 新增发布前语法检查（prepublishOnly）与 GitHub Actions CI
-- README 安装章节重写（一键安装 / tarball 安装 / 手动安装）
+- README 安装章节重写（一键安装 / tarball 安装 / npm 安装 / 手动安装）
 
 ## 0.1.0 - 2026-08-17
 
