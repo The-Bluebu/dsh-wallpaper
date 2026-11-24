@@ -54,13 +54,13 @@
 插件自带 `dsh.bundle` manifest，一条命令即可自动注册，无需再改任何配置：
 
 ```bash
-dsh plugin --profile web add "github:B-TQ/dsh-wallpaper"
+dsh plugin --profile web add "github:The-Bluebu/dsh-wallpaper"
 ```
 
 未安装 git 时，可直接用 GitHub 打包的源码 tarball：
 
 ```bash
-dsh plugin --profile web add "https://codeload.github.com/B-TQ/dsh-wallpaper/tar.gz/refs/heads/main"
+dsh plugin --profile web add "https://codeload.github.com/The-Bluebu/dsh-wallpaper/tar.gz/refs/heads/main"
 ```
 
 发布到 npm 后，也可直接按包名安装（scoped 名归作者账号所有，不会与其他同名插件冲突）：
@@ -147,3 +147,5 @@ npm run check   # 校验三个入口文件的语法
 ## 📄 许可
 
 [MIT](LICENSE) © dsh-wallpaper contributors
+
+由 [Bluebu](https://github.com/The-Bluebu) 维护。
